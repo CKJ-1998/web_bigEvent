@@ -12,9 +12,7 @@ $(function () {
   //步骤一：从layui中获取form对象
   var form = layui.form;
   var layer = layui.layer;
-  var data = {
-    username: $('#form-reg [name=username]').val(), password: $('#form-reg [name=password]').val()
-  };
+ 
   form.verify({
     pass: [
       /^[\S]{6,12}$/,
@@ -31,6 +29,10 @@ $(function () {
   //注册功能
   $('#form-reg').on('submit', function (e) {
     e.preventDefault();
+     var data = {
+        username: $('#form-reg [name=username]').val(), 
+        password: $('#form-reg [name=password]').val()
+      };
     $.post('/api/reguser', data, function (res) {
       if (res.status !== 0) {
         return layer.msg(res.message);
