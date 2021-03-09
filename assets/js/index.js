@@ -1,5 +1,6 @@
 $(function () {
   getUserInfo();
+  var layer = layui.layer;
   $('#btnLogout').on('click', function () {
     layui.layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function (index) {
       //do something
@@ -16,6 +17,7 @@ function getUserInfo() {
     method: 'GET',
     url: '/my/userinfo',
     success: function (res) {
+      // console.log(res);
       if (res.status !== 0) {
         return layui.layer.msg('获取用户信息失败');
       }
