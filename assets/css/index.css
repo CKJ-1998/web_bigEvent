@@ -28,6 +28,9 @@ iframe {
   font-size: 12px;
   user-select: none;
 }
+a {
+  transition: none !important;
+}
 
 .layui-side-scroll .userinfo{
   border-bottom: 1px solid #282b33;
