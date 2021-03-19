@@ -55,7 +55,7 @@ $(function () {
         // console.log(res.token);
         // 将登录成功得到的token值存储到本地
         localStorage.setItem('token', res.token);
-        location.href = '/index.html';
+        location.href = './index.html';
       }
     })
   })
