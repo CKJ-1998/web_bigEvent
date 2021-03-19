@@ -2,7 +2,7 @@ $(function () {
   getUserInfo();
   var layer = layui.layer;
   $('#btnLogout').on('click', function () {
-    layui.layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function (index) {
+    layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function (index) {
       //do something
       localStorage.removeItem('token');
       location.href = '/login.html';
@@ -32,7 +32,7 @@ function renderAvatar(user) {
 
   // 渲染用户头像
   if (user.user_pic !== null) {
-    $('.layui-nav-img').attr('scr', user.user_pic).show();
+    $('.layui-nav-img').attr('src', user.user_pic).show();
     $('.text-avatar').hide();
   } else {
     var first = name[0].toUpperCase();
